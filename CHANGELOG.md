@@ -2,28 +2,28 @@
 
 All notable changes to ProFlow will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
-
 ## [Unreleased]
 
 ### Added
-- Initial project setup
-- Basic documentation structure
-- Project roadmap
-- Development guidelines
+- Theme toggle functionality with dark/light mode support using `next-themes`
+- Responsive authenticated layout with sidebar navigation
+- Icon integration using `lucide-react` for improved UI
+- Comprehensive favicon and touch icon support
+  - Added favicons in multiple sizes (16x16, 32x32)
+  - Added Apple touch icon (180x180)
+  - Added Android chrome icons (192x192, 512x512)
+  - Added favicon generation script
+- Web manifest for PWA support
+- NextAuth.js integration for authentication
+- Project management API endpoints
+- SQLite database integration with Prisma
 
-### Coming Soon
-- User authentication system
-- Team management features
-- Project management basics
-- Task tracking system
+### Changed
+- Updated root layout with proper meta tags and icon references
+- Improved navigation with icon indicators
+- Switched from PostgreSQL to SQLite for development database
 
-## [0.1.0] - 2024-01-XX
-### Added
-- Initial repository setup
-- Basic project documentation
-- Development environment configuration
-
-[Unreleased]: https://github.com/yourusername/proflow/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/yourusername/proflow/releases/tag/v0.1.0
+### Fixed
+- Resolved 404 errors for missing favicon and touch icons
+- Fixed theme switching functionality
+- Addressed hydration warnings in the layout

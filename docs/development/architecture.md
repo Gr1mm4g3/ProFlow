@@ -1,179 +1,104 @@
-# Architecture Overview
+# ProFlow Architecture Overview
 
-## System Architecture
+## Technology Stack
 
-ProFlow follows a modern, scalable architecture designed for reliability and maintainability.
+### Frontend
+- **Framework**: Next.js 14 (App Router)
+- **UI Library**: React
+- **Styling**: Tailwind CSS
+- **State Management**: React Context + Server Components
+- **Theme Management**: next-themes
 
-```
-┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
-│   Client Layer  │     │   Application   │     │    Data Layer   │
-│                 │     │      Layer      │     │                 │
-│  React + Redux  │────▶│   Node.js API   │────▶│   PostgreSQL   │
-│     TypeScript  │     │    Express.js   │     │     Redis      │
-│                 │     │                 │     │                 │
-└─────────────────┘     └─────────────────┘     └─────────────────┘
-         │                      │                        │
-         │                      │                        │
-         ▼                      ▼                        ▼
-┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
-│    Frontend     │     │    Backend      │     │    Storage      │
-│   Components    │     │    Services     │     │    Services     │
-└─────────────────┘     └─────────────────┘     └─────────────────┘
-```
-
-## Component Overview
-
-### Frontend Layer
-- **Technology**: React with TypeScript
-- **State Management**: Redux + Redux Toolkit
-- **UI Framework**: Material-UI
-- **API Communication**: Axios
-- **Real-time**: Socket.IO client
-
-### Backend Layer
+### Backend
 - **Runtime**: Node.js
-- **Framework**: Express.js
-- **API Style**: REST + WebSocket
-- **Authentication**: JWT
-- **Validation**: Joi
-- **Documentation**: OpenAPI/Swagger
+- **API**: Next.js API Routes
+- **Authentication**: NextAuth.js
+- **Database ORM**: Prisma
+- **Database**: SQLite (Development)
 
-### Data Layer
-- **Primary Database**: PostgreSQL
-- **Caching**: Redis
-- **File Storage**: S3-compatible
-- **Search**: Elasticsearch (planned)
+## Core Components
 
-## Key Components
-
-### Authentication Service
-- JWT-based authentication
-- Role-based access control
-- OAuth2 integration
+### Authentication System
+- JWT-based authentication using NextAuth.js
+- Protected routes and API endpoints
 - Session management
+- User roles and permissions
 
-### Project Service
-- Project management
-- Team collaboration
-- Resource allocation
-- Project analytics
+### Project Management
+- Project CRUD operations
+- Team collaboration features
+- Task management system
+- Real-time updates (planned)
 
-### Task Service
-- Task management
-- Time tracking
-- Dependencies
-- Notifications
+### User Interface
+- Responsive design
+- Dark/Light theme support
+- Component-based architecture
+- Accessible UI elements
 
-### AI Service
-- OpenAI integration
-- Natural language processing
-- Task automation
-- Insights generation
+## Directory Structure
+
+```
+src/
+├── app/                    # Next.js App Router pages
+│   ├── (authenticated)/    # Protected routes
+│   ├── api/               # API endpoints
+│   └── auth/              # Authentication pages
+├── components/            # Reusable React components
+│   ├── ui/               # Basic UI components
+│   └── shared/           # Shared components
+├── lib/                   # Utility functions
+│   ├── auth.ts           # Authentication config
+│   ├── prisma.ts         # Database client
+│   └── utils.ts          # Helper functions
+└── styles/               # Global styles
+```
 
 ## Data Flow
 
-### Request Flow
-1. Client makes request
-2. Load balancer routes request
-3. Authentication middleware validates
-4. Service processes request
-5. Database operation (if needed)
-6. Response returned to client
+1. **Client-Side Flow**
+   - Components make API requests to Next.js API routes
+   - Server components fetch data directly
+   - Client state managed through React Context
+   - Theme preferences stored in localStorage
 
-### Real-time Updates
-1. Client connects via WebSocket
-2. Server authenticates connection
-3. Client subscribes to channels
-4. Server pushes updates
-5. Client updates UI
+2. **Server-Side Flow**
+   - API routes handle data operations
+   - Authentication middleware protects routes
+   - Prisma manages database operations
+   - Server components render with fresh data
 
-## Security Architecture
+## Security Measures
 
-### Authentication
-- JWT tokens
-- Refresh token rotation
+- CSRF protection
+- XSS prevention
+- Secure session management
+- Input validation
 - Rate limiting
-- CORS protection
+- Environment variable protection
 
-### Data Security
-- Encryption at rest
-- TLS in transit
-- Data backups
-- Audit logging
+## Performance Optimization
 
-## Scalability
-
-### Horizontal Scaling
-- Stateless services
-- Load balancing
-- Database replication
-- Cache distribution
-
-### Vertical Scaling
-- Resource optimization
-- Query optimization
+- Server-side rendering
+- Static page generation where possible
+- Image optimization
+- Code splitting
 - Caching strategies
-- Background processing
-
-## Monitoring
-
-### Application Monitoring
-- Performance metrics
-- Error tracking
-- User analytics
-- Resource usage
-
-### Infrastructure Monitoring
-- Server health
-- Database performance
-- Cache hit rates
-- Network metrics
-
-## Development Workflow
-
-### Local Development
-1. Development environment
-2. Hot reloading
-3. Debug tools
-4. Test suites
-
-### Deployment Pipeline
-1. Code commit
-2. Automated tests
-3. Build process
-4. Staging deployment
-5. Production release
 
 ## Future Considerations
 
-### Planned Improvements
-- Microservices architecture
-- GraphQL API
-- Mobile application
-- Advanced analytics
+1. **Scalability**
+   - Database migration to PostgreSQL
+   - Redis for caching
+   - Containerization
 
-### Scalability Plans
-- Global distribution
-- Multi-region support
-- Enhanced caching
-- Performance optimization
+2. **Features**
+   - Real-time collaboration
+   - Advanced analytics
+   - Integration with external tools
+   - Mobile application
 
-## Best Practices
-
-### Code Organization
-- Feature-based structure
-- Clear separation of concerns
-- Consistent naming
-- Documentation
-
-### Development Process
-- Code review
-- Automated testing
-- CI/CD pipeline
-- Performance monitoring
-
-## Next Steps
-
-- Review [API Documentation](../advanced/api-reference.md)
-- Check [Development Setup](setup.md)
-- Explore [Security Measures](../security/best-practices.md)
+3. **Performance**
+   - Edge functions deployment
+   - Advanced caching strategies
+   - Progressive Web App (PWA)
