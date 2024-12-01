@@ -175,6 +175,67 @@ docker-compose down
 6. PostgreSQL
 7. Redis
 
+## Theme Development
+
+ProFlow uses a dual-theme system with carefully selected color palettes:
+
+### Theme Structure
+
+The theme system is built using:
+- CSS Variables for dynamic theme switching
+- Tailwind CSS for utility classes
+- next-themes for theme management
+
+### Color Palettes
+
+#### Light Theme (Catppuccin Latte)
+```css
+--background: 220 23% 95%;    /* #eff1f5 */
+--foreground: 234 16% 35%;    /* #4c4f69 */
+--muted: 220 14% 88%;         /* #dce0e8 */
+--primary: 320 86% 64%;       /* #ea76cb */
+--secondary: 227 71% 72%;     /* #7287fd */
+--accent: 172 66% 50%;        /* #40a02b */
+```
+
+#### Dark Theme (Dracula)
+```css
+--background: 231 15% 18%;    /* #282a36 */
+--foreground: 60 30% 96%;     /* #f8f8f2 */
+--muted: 232 14% 31%;         /* #44475a */
+--primary: 326 100% 74%;      /* #ff79c6 */
+--secondary: 265 89% 78%;     /* #bd93f9 */
+--accent: 135 94% 65%;        /* #50fa7b */
+```
+
+### Implementing Theme Support
+
+1. Use CSS variables in your components:
+   ```tsx
+   className="bg-background text-foreground"
+   ```
+
+2. Use theme-aware components:
+   ```tsx
+   <div className="dark:bg-background dark:text-foreground">
+     {/* Component content */}
+   </div>
+   ```
+
+3. Theme toggle implementation:
+   ```tsx
+   import { useTheme } from 'next-themes'
+   
+   function ThemeToggle() {
+     const { theme, setTheme } = useTheme()
+     return (
+       <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
+         Toggle Theme
+       </button>
+     )
+   }
+   ```
+
 ## Next Steps
 
 - Review [Architecture Overview](architecture.md)

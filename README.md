@@ -1,65 +1,55 @@
 # ProFlow
 
-## Modern Project Management for Software Development Teams
+A modern project management system designed for software development teams, built with Next.js and Prisma.
 
-ProFlow is a comprehensive project management system specifically designed for software development teams. It combines powerful project management features with developer-centric workflows, AI assistance, and seamless team collaboration.
+## Features
 
-### 🌟 Key Features
+- **Modern UI**: Clean, responsive interface with light and dark mode support
+  - Light Mode: Catppuccin Latte theme for a soft, pleasant experience
+  - Dark Mode: Dracula theme for reduced eye strain in low-light conditions
+- **Project Management**: Comprehensive tools for managing software projects
+- **Team Collaboration**: Built-in features for team coordination
+- **Task Tracking**: Efficient task and issue management
+- **Customizable Workflows**: Adapt the system to your team's needs
 
-- **Team Management**
-  - Support for both individual users and companies
-  - Flexible team creation and management
-  - Role-based access control
-  - Tiered content access
+## Getting Started
 
-- **Project Management**
-  - Task tracking and management
-  - Bug tracking system
-  - Automated time tracking
-  - SCRUM/Agile support
-  - Sprint planning and management
-  - Real-time collaboration tools
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Set up your environment variables:
+   ```bash
+   cp .env.example .env.local
+   ```
+4. Run the development server:
+   ```bash
+   npm run dev
+   ```
 
-- **AI Integration**
-  - AI-powered customer service
-  - Intelligent project assistant
-  - Task automation and suggestions
+## Theme Customization
 
-- **Additional Features**
-  - Event notifications
-  - Administrative dashboard
-  - Development blog
-  - Comprehensive documentation
+ProFlow uses two carefully selected color themes:
 
-### 🚀 Current Status
+### Light Mode (Catppuccin Latte)
+- Background: #eff1f5
+- Text: #4c4f69
+- Primary: #ea76cb
+- Secondary: #7287fd
+- Accent: #40a02b
 
-ProFlow is currently in active development. Check our [ROADMAP.md](ROADMAP.md) for detailed development status and [CHANGELOG.md](CHANGELOG.md) for version history.
+### Dark Mode (Dracula)
+- Background: #282a36
+- Text: #f8f8f2
+- Primary: #ff79c6
+- Secondary: #bd93f9
+- Accent: #50fa7b
 
-### 📚 Documentation
+## Contributing
 
-Visit our comprehensive documentation at [docs/](docs/) for:
-- Getting Started Guide
-- User Manual
-- API Reference
-- Security & Compliance
-- Contribution Guidelines
+Please read our [Contributing Guidelines](CONTRIBUTING.md) before submitting pull requests.
 
-### 🔒 Security & Compliance
+## License
 
-ProFlow is built with security and privacy in mind:
-- GDPR compliant
-- Secure data handling
-- Regular security audits
-- Data encryption at rest and in transit
-
-### 🤝 Contributing
-
-We welcome contributions! Please see our [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
-
-### 📝 License
-
-[License details to be determined]
-
----
-
- 2024 ProFlow. All rights reserved.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

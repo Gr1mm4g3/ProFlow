@@ -47,6 +47,11 @@ ProFlow addresses these challenges by providing:
 - Administrative dashboard
 - Development blog
 - Comprehensive documentation
+- Theme support
+  - Light mode: Soft, pleasant Catppuccin Latte theme
+  - Dark mode: Eye-friendly Dracula theme
+  - Automatic system theme detection
+  - Manual theme toggle in the navigation bar
 
 ## System Requirements
 
@@ -64,3 +69,28 @@ ProFlow addresses these challenges by providing:
 ## Getting Started
 
 Ready to get started with ProFlow? Check out our [Quick Start Guide](quickstart.md) to begin your journey!
+
+## Customizing Your Experience
+
+### Theme Preferences
+1. Click the theme toggle button in the navigation bar (sun/moon icon)
+2. Choose between:
+   - Light Mode: Optimized for daytime use
+   - Dark Mode: Perfect for late-night coding sessions
+   - System: Automatically matches your system preferences
+
+### Workspace Setup
+- Customize your dashboard layout
+- Set up project templates
+- Configure notifications
+- Set personal preferences
+
+## Need Help?
+
+- Check our [Quick Start Guide](quickstart.md)
+- Visit our [Documentation](../README.md)
+- Contact support at support@proflow.app
+
+## Updates and Changes
+
+Stay updated with our latest features and improvements in our [Changelog](../../CHANGELOG.md).

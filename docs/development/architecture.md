@@ -36,6 +36,51 @@
 - Component-based architecture
 - Accessible UI elements
 
+### Theme System
+
+The theme system is built on three main pillars:
+
+1. **Theme Provider (`next-themes`)**
+   - Manages theme state
+   - Handles system preference detection
+   - Provides theme persistence
+   - Prevents hydration mismatch
+
+2. **CSS Variables System**
+   - Root variables defined in `globals.css`
+   - HSL color format for better color manipulation
+   - Separate sets for light and dark modes
+   - Semantic naming convention (e.g., `--background`, `--foreground`)
+
+3. **Tailwind Integration**
+   - Custom colors mapped to CSS variables
+   - Dark mode variant support
+   - Utility classes for theme-aware styling
+
+```mermaid
+graph TD
+    A[Theme Provider] --> B[Theme State]
+    B --> C[CSS Variables]
+    C --> D[Tailwind Classes]
+    D --> E[Components]
+    F[System Preference] --> A
+    G[User Preference] --> A
+```
+
+### Theme Color Structure
+
+```typescript
+interface ThemeColors {
+  background: string    // Page background
+  foreground: string   // Primary text
+  muted: string        // Secondary backgrounds
+  primary: string      // Primary actions/branding
+  secondary: string    // Secondary actions
+  accent: string       // Highlights/accents
+  destructive: string  // Error/warning states
+}
+```
+
 ## Directory Structure
 
 ```

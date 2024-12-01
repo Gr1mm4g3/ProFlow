@@ -61,6 +61,19 @@ This guide will help you get up and running with ProFlow quickly.
    - "Show project status"
    - "Generate sprint report"
 
+## 7. Customize Your Theme
+
+ProFlow comes with a modern, theme-aware interface:
+
+- **Light Mode**: Catppuccin Latte theme for daytime use
+- **Dark Mode**: Dracula theme for reduced eye strain
+- **System Mode**: Automatically matches your system preferences
+
+To switch themes:
+1. Click the theme toggle in the navigation bar (sun/moon icon)
+2. Select your preferred theme
+3. Your choice will be saved for future sessions
+
 ## Next Steps
 
 - Explore [SCRUM Features](../core-concepts/scrum.md)

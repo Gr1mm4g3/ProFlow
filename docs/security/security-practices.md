@@ -110,6 +110,13 @@
 - Secret scanning
 - Dependency scanning
 
+### Theme Security
+- Theme preferences are stored securely per user
+- No external theme loading to prevent XSS attacks
+- CSS sanitization for custom theme values
+- Theme-related localStorage data is encrypted
+- Accessibility standards maintained across themes
+
 ## Regular Reviews
 
 ### Security Audits
